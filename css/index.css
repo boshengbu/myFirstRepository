@@ -88,8 +88,8 @@ body {
 .container {
     display:flex;
   }
-.box1 { background-image:linear-gradient(to right, lightgrey,#D6DBDF);}
-.box2 { background-image:linear-gradient(to right, lightgrey,#D6DBDF);}
+.box1 { background-image:linear-gradient(to bottom,  #f4f4f4,white);}
+.box2 { background-image:linear-gradient(to bottom,  #f4f4f4,white);}
 .box1 {
     /*flex:10 5 400px;*/ /* Proper shorthand */
     height: 400px;
@@ -110,7 +110,7 @@ body {
   }
 
 .flexItem {
-    background-color: white;
+    background-color: #f4f4f4;
     margin: 10px;
     padding: 10px;
     width: 250px;
@@ -124,10 +124,13 @@ body {
   }
 .flexContainer {
     display: flex;
-    background-color:aliceblue;
     margin: 10px;
     padding: 10px;
   }
+.overflex {
+  color: #f4f4f4;
+  padding: 10px;
+}
   /*
   The properties above are just used to display your flex container.
   
@@ -177,7 +180,8 @@ body {
 .facebox{
     width:100%;
     height: 100px;
-    background-color: aliceblue;
+    background-image:linear-gradient(to right, darkred,white);
+    border: 1px solid lightgray;
   }
 .absolute {
     position: absolute;
@@ -195,25 +199,29 @@ body {
 }
 .grid {
   display: grid;
-  grid-template-rows:1fr 1fr 1fr 1fr;
-  grid-template-columns:1fr 1fr;
+  grid-template-rows:1fr 1fr;
+  grid-template-columns:1fr 1fr 1fr 1fr;
   grid-template-areas:
-  "header header"
-  "heroImg heroImg"
-  "leftContent rightContent"
-  "footer footer"
+  "grid1 grid2 grid3 grid4"
+  "footer footer footer footer"
   ;
 }
 .header {
  grid-area: header;
 }
 
-.leftContent {
- grid-area: leftContent;
+.grid1 {
+ grid-area: grid1;
 }
-.rightContent {
- grid-area: rightContent;
+.grid2{
+ grid-area: grid2;
 }
+.grid3{
+  grid-area: grid3;
+ }
+.grid4{
+  grid-area: grid4;
+ }
 .footer {
  grid-area: footer;
 }
@@ -223,13 +231,13 @@ body {
  grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 .content {
-  background-color: lightblue;
-  border: 1px solid blue;
+  background-color: #f4f4f4;
+  border: 1px solid lightgray;
   margin:5px;
 }
 .gridChild {
-  background-color: lightgrey;
-  border: 1px solid blue;
+  background-color:  #f4f4f4;
+  border: 1px solid lightgray;
   min-height: 250px;
 }
 .spacing {
@@ -246,13 +254,10 @@ body {
 @media only screen and (max-width: 500px) {
   .grid {
     display: grid;
-    grid-template-rows:1fr 1fr 1fr 1fr 1fr;
-    grid-template-columns:1fr;
+    grid-template-rows:1fr 1fr;
+    grid-template-columns:1fr 1fr 1fr 1fr;
     grid-template-areas:
-    "header"
-    "heroImg"
-    "leftContent"
-    "rightContent"
+    "grid1 grid2 grid3 grid4"
     "footer"
     ;
   }
